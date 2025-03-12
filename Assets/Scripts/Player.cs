@@ -8,10 +8,15 @@ public class Player : MonoBehaviour
     float speed;
 
     Rigidbody2D rigid;
+    SpriteRenderer spriteRenderer;
+
+    Animator anim;
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +33,15 @@ public class Player : MonoBehaviour
     void OnMove(InputValue value)
     {
         inputVec = value.Get<Vector2>();
+    }
+
+    void LateUpdate()
+    {
+        anim.SetFloat("Speed", inputVec.magnitude);
+        if(inputVec.x != 0)
+        {
+            spriteRenderer.flipX = inputVec.x < 0;
+        }
     }
 
 }
