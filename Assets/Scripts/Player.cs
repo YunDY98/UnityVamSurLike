@@ -3,9 +3,9 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    Vector2 inputVec;
+    public Vector2 inputVec;
 
-    float speed;
+    public float speed;
 
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
@@ -18,11 +18,7 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        speed = 1;
-    }
+   
 
     void FixedUpdate()
     {
