@@ -11,13 +11,27 @@ public class GameManager : MonoBehaviour
 
     [Header("# PlayerInfo")]
     [SerializeField]
+    int _maxHealth;
+    [SerializeField]
+    int _health;
+    [SerializeField]
     int _level;
     [SerializeField]
     int _kill;
     [SerializeField]
     int _exp;
     public int[] nextExp = {3,5,10,100,150,210,280,500,600,1000,2000};
+    public int MaxHealth
+    {
+        get { return _maxHealth; }
+    }
 
+    public int Health
+    {
+        get { return _health; }
+        set { _health = value; }
+
+    }
 
     public int Exp
     {
@@ -51,6 +65,12 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
 
+        
+    }
+    void Start()
+    {   
+        Health = MaxHealth;
+        
         
     }
     void Update()
