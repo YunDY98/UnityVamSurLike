@@ -19,7 +19,8 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         scanner = GetComponent<Scanner>();
     }
-   
+
+
 
     void FixedUpdate()
     {

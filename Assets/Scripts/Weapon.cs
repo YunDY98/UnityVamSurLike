@@ -12,21 +12,14 @@ public class Weapon : MonoBehaviour
 
     float _timer;
 
-    void Awake()
-    {
-        player = GetComponentInParent<Player>();
-
-    }
-
-    void Start()
-    {
-        Init();
-    }
-
+   
+   
 
     // Update is called once per frame
     void Update()
     {
+        
+        print(damage);
         
         switch (id)
         {
@@ -47,6 +40,7 @@ public class Weapon : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
         {
             LevelUp(5,1);
+            print("?>");
         }
         
     }
@@ -59,11 +53,38 @@ public class Weapon : MonoBehaviour
         if(id == 0)
             Batch();
 
-
+        player.BroadcastMessage("ApplyGear",SendMessageOptions.DontRequireReceiver);
+        
     }
 
-    public void Init()
+    public void Init(ItemData data)
     {
+        player = GameManager.instance.player;
+       
+        // Basic Set
+        name = "Weapon" + data.itemID;
+       
+        transform.parent = player.transform;
+       
+          
+     
+       
+   
+        transform.localPosition = Vector3.zero;
+        //Property Set
+        id = data.itemID;
+        damage = data.baseDamage;
+        count = data.baseCount;
+
+        for(int i =0;i< GameManager.instance.pool.prefabs.Length;++i)
+        {
+            if(data.projectile == GameManager.instance.pool.prefabs[i])
+            {
+                prefabId = i;
+                break;
+            }
+        }
+
         switch (id)
         {
             case 0:
@@ -74,6 +95,7 @@ public class Weapon : MonoBehaviour
                 speed = 0.3f;
                 break;
         }
+        player.BroadcastMessage("ApplyGear",SendMessageOptions.DontRequireReceiver);
     }
 
     void Batch()
@@ -111,8 +133,11 @@ public class Weapon : MonoBehaviour
 
     void Fire()
     {
+    
         if(!player.scanner.nearestTarget) 
             return;
+        
+      
 
         Vector3 targetPos = player.scanner.nearestTarget.position;
         Vector3 dir = targetPos - transform.position;
