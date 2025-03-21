@@ -47,6 +47,7 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         if(!isLive || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit")) return;
+        if(!GameManager.instance.isLive) return;
 
         Vector2 dirVec = target.position - rigid.position; // 타켓 위치 - 나의 위치 = 방향 
         Vector2 nextVec = dirVec.normalized * speed * Time.fixedDeltaTime;
@@ -60,6 +61,7 @@ public class Enemy : MonoBehaviour
     void LateUpdate()
     {
         if(!isLive) return;
+        if(!GameManager.instance.isLive) return;
         spriteRenderer.flipX = target.position.x < rigid.position.x;
     }
 

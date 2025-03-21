@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Item 1
   m_EditorClassIdentifier: 
   itemID: 1
-  itemName: "\uC5FD\uCD1D"
-  itemDesc: 
+  itemName: Gun
+  itemDesc: 'Damage {0}% Up
+
+    penetrating {1} Add'
   itemIcon: {fileID: -205726582, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
   itemType: 1
   baseDamage: 3
@@ -27,3 +29,4 @@ MonoBehaviour:
   - 3
   counts: 030000000400000005000000060000000a000000
   projectile: {fileID: 1674876719103562947, guid: e220c620d780e4615add28a001a0f429, type: 3}
+  hand: {fileID: -353751291, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}

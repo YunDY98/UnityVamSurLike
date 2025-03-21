@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61812483cad734ba6bea30ac6058a979, type: 3}
   m_Name: Item 2
   m_EditorClassIdentifier: 
-  ItemID: 2
-  itemName: "\uC7A5\uAC11"
-  itemDesc: 
+  itemID: 0
+  itemName: Glove
+  itemDesc: Weapon Speed {0}% Up
   itemIcon: {fileID: -201829820, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
   itemType: 2
   baseDamage: 0
@@ -27,3 +27,4 @@ MonoBehaviour:
   - 3
   counts: 0000000000000000000000000000000000000000
   projectile: {fileID: 0}
+  hand: {fileID: 0}

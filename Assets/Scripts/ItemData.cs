@@ -15,6 +15,7 @@ public class ItemData : ScriptableObject
     [Header("# Main Info")]
     public int itemID;
     public string itemName;
+    [TextArea]
     public string itemDesc;
     public Sprite itemIcon;
     public ItemType itemType;
@@ -29,6 +30,7 @@ public class ItemData : ScriptableObject
 
     [Header("# Weapon")]
     public GameObject projectile;
+    public Sprite hand;
     
    
    

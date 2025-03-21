@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61812483cad734ba6bea30ac6058a979, type: 3}
   m_Name: Item 0
   m_EditorClassIdentifier: 
-  ItemID: 0
-  itemName: "\uC0BD"
-  itemDesc: 
+  itemID: 0
+  itemName: shovel
+  itemDesc: 'Damage {0}% Up
+
+    Count {1} Add'
   itemIcon: {fileID: -181907988, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
   itemType: 0
   baseDamage: 4.5
@@ -27,3 +29,4 @@ MonoBehaviour:
   - 3
   counts: 0100000001000000010000000100000002000000
   projectile: {fileID: 8547800780906166077, guid: 7fdb63cf7712c499684ceff41763cb14, type: 3}
+  hand: {fileID: 143021600, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
